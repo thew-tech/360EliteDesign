@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Elite Design | Design, Develop, Grow</title>
+    <meta name="description" content="360 Elite Design is a full-service creative agency specializing in Design, Development, and Growth. We craft stunning websites and powerful brands.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind CSS (No Preflight to protect existing styles) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+        theme: {
+          extend: {
+            colors: { primary: '#007BFF', secondary: '#00C6FF', dark: '#0A192F' }
+          }
+        }
+      }
+    </script>
+
+    <!-- Hero Floating Animations -->
+    <style>
+        .hero-float-1 { animation: heroFloat1 6s ease-in-out infinite; }
+        .hero-float-2 { animation: heroFloat2 5s ease-in-out infinite; }
+        .hero-float-3 { animation: heroFloat3 7s ease-in-out infinite; }
+        .hero-float-4 { animation: heroFloat4 5.5s ease-in-out infinite; }
+        .hero-float-5 { animation: heroFloat5 4s ease-in-out infinite; }
+        .hero-float-6 { animation: heroFloat6 6.5s ease-in-out infinite; }
+
+        @keyframes heroFloat1 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-18px) rotate(2deg); }
+        }
+        @keyframes heroFloat2 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-14px) rotate(-3deg); }
+        }
+        @keyframes heroFloat3 {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.03); }
+        }
+        @keyframes heroFloat4 {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
+        }
+        @keyframes heroFloat5 {
+            0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+            50% { transform: translateY(-15px) scale(1.08) rotate(10deg); }
+        }
+        @keyframes heroFloat6 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-16px); }
+        }
+
+        /* Entrance animations */
+        .hero-float-1 { animation-delay: 0s; opacity: 0; animation: heroFloat1 6s ease-in-out infinite, heroEntrance 0.8s ease-out 0.2s forwards; }
+        .hero-float-2 { animation-delay: 0.1s; opacity: 0; animation: heroFloat2 5s ease-in-out infinite, heroEntrance 0.8s ease-out 0.4s forwards; }
+        .hero-float-3 { animation-delay: 0.2s; opacity: 0; animation: heroFloat3 7s ease-in-out infinite, heroEntrance 0.8s ease-out 0.6s forwards; }
+        .hero-float-4 { animation-delay: 0.3s; opacity: 0; animation: heroFloat4 5.5s ease-in-out infinite, heroEntrance 0.8s ease-out 0.8s forwards; }
+        .hero-float-5 { animation-delay: 0.4s; opacity: 0; animation: heroFloat5 4s ease-in-out infinite, heroEntrance 0.8s ease-out 0.5s forwards; }
+        .hero-float-6 { animation-delay: 0.5s; opacity: 0; animation: heroFloat6 6.5s ease-in-out infinite, heroEntrance 0.8s ease-out 0.3s forwards; }
+
+        @keyframes heroEntrance {
+            0% { opacity: 0; transform: translateY(40px) scale(0.8); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Hero text entrance */
+        .hero h1 { opacity: 0; animation: heroTextSlide 1s ease-out 0.1s forwards; }
+        .hero p { opacity: 0; animation: heroTextSlide 1s ease-out 0.3s forwards; }
+        .hero div[style*="display: flex; gap: 1.5rem"] { opacity: 0; animation: heroTextSlide 1s ease-out 0.5s forwards; }
+
+        @keyframes heroTextSlide {
+            0% { opacity: 0; transform: translateX(-40px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation (Bright Premium Edition) -->
+    <nav class="navbar" id="navbar" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; padding: 5px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1400px; padding: 0 20px;">
+            <a href="#" class="logo" style="display: block; text-decoration: none; width: 220px; height: 60px; position: relative;">
+                <img src="finallogo.png" alt="360 Elite Design Logo" style="height: 140px; width: auto; max-width: none; display: block; position: absolute; top: -10px; left: 0; ">
+            </a>
+            <div class="nav-links" style="display: flex; gap: 30px; align-items: center;">
+                <div class="dropdown group" style="position: relative;">
+                    <a href="#services" style="color: #0A192F; font-weight: 700; font-size: 1.25rem; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 4px;">Services <i class="ph ph-caret-down text-sm"></i></a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-4 w-64 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 overflow-hidden border border-blue-400/30" style="z-index: 100;">
+                        <a href="/web-design" class="block px-6 py-3 text-white/90 hover:text-white hover:bg-white/20 border-b border-white/10 transition-colors font-['Inter'] font-medium text-base">Web Design</a>
+                        <a href="/ui-ux-design" class="block px-6 py-3 text-white/90 hover:text-white hover:bg-white/20 border-b border-white/10 transition-colors font-['Inter'] font-medium text-base">UI/UX Design</a>
+                        <a href="/brand-identity" class="block px-6 py-3 text-white/90 hover:text-white hover:bg-white/20 border-b border-white/10 transition-colors font-['Inter'] font-medium text-base">Brand Identity</a>
+                        <a href="/e-commerce" class="block px-6 py-3 text-white/90 hover:text-white hover:bg-white/20 border-b border-white/10 transition-colors font-['Inter'] font-medium text-base">E-commerce</a>
+                        <a href="/digital-marketing" class="block px-6 py-3 text-white/90 hover:text-white hover:bg-white/20 border-b border-white/10 transition-colors font-['Inter'] font-medium text-base">Digital Marketing</a>
+                        <a href="/mobile-apps" class="block px-6 py-3 text-white/90 hover:text-white hover:bg-white/20 transition-colors font-['Inter'] font-medium text-base">Mobile Apps</a>
+                    </div>
+                </div>
+                <a href="#portfolio" style="color: #0A192F; font-weight: 700; font-size: 1.25rem; font-family: 'Inter', sans-serif;">Work</a>
+                <a href="#about" style="color: #0A192F; font-weight: 700; font-size: 1.25rem; font-family: 'Inter', sans-serif;">Agency</a>
+                <a href="#contact" style="color: #0A192F; font-weight: 700; font-size: 1.25rem; font-family: 'Inter', sans-serif;">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#contact" class="btn" style="background: #0A192F; color: white; font-weight: 600; border-radius: 30px; padding: 12px 30px; box-shadow: 0 4px 15px rgba(10,25,47,0.2); transition: transform 0.3s;">Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bright Premium Sexy Abstract Hero Section -->
+    <section class="hero" id="home" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop'); background-size: cover; background-position: center; min-height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; perspective: 1000px;">
+        
+        <!-- Bright Sexy Pulsing Glass Overlay -->
+        <div class="animate-pulse" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(240, 248, 255, 0.4) 50%, rgba(0, 198, 255, 0.15) 100%); z-index: 1; backdrop-filter: blur(8px);"></div>
+        
+        <div class="container" style="position: relative; z-index: 2; width: 100%; max-width: 1400px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: 130px;">
+            
+            <!-- Left Content: Crisp HTML Text -->
+            <div style="flex: 1; min-width: 300px; max-width: 650px; transition: transform 0.1s ease-out;" class="mouse-parallax" data-speed="2">
+                <h1 style="color: #0A192F; font-size: clamp(3.5rem, 5vw, 5.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif;">
+                    ELEVATE YOUR BRAND'S <br><span style="background: linear-gradient(to right, #007BFF, #00C6FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">DIGITAL EXPERIENCE</span>
+                </h1>
+                <p style="color: #475569; font-size: 1.3rem; margin-bottom: 2.5rem; max-width: 500px; line-height: 1.6; font-weight: 500;">
+                    From Vision to Reality: Comprehensive Design & Development Solutions built perfectly for the modern web.
+                </p>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="#services" class="btn" style="background: linear-gradient(135deg, #007BFF, #00C6FF); color: white; border-radius: 30px; padding: 18px 40px; font-weight: 700; box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4); display: flex; align-items: center; gap: 10px; font-size: 1.1rem;">
+                        EXPLORE OUR SERVICES <i class="ph ph-arrow-right"></i>
+                    </a>
+                    <a href="#portfolio" class="btn" style="background: white; border: 2px solid rgba(0,0,0,0.1); color: #0A192F; border-radius: 30px; padding: 18px 40px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,0.05); font-size: 1.1rem;">
+                        VIEW PORTFOLIO
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Content: Rich Floating Image Gallery -->
+            <div style="flex: 1; min-width: 300px; position: relative; height: 550px; display: flex; justify-content: center; align-items: center;">
+                
+                <!-- Main Portfolio Showcase (Large) -->
+                <div class="mouse-parallax hero-float-1" data-speed="-3" style="position: absolute; top: 5%; right: 5%; z-index: 5; transition: transform 0.1s ease-out;">
+                    <div style="width: 280px; height: 200px; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,123,255,0.25); border: 3px solid rgba(255,255,255,0.9); position: relative;">
+                        <img src="images/portfolio-web.png" alt="Web Project" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(10,25,47,0.9), transparent);">
+                            <span style="color: white; font-weight: 700; font-size: 0.8rem; font-family: 'Outfit', sans-serif; letter-spacing: 1px;">WEB DEVELOPMENT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App Design Card -->
+                <div class="mouse-parallax hero-float-2" data-speed="5" style="position: absolute; top: 42%; left: 0%; z-index: 3; transition: transform 0.1s ease-out;">
+                    <div style="width: 200px; height: 160px; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,198,255,0.2); border: 3px solid rgba(255,255,255,0.9); position: relative;">
+                        <img src="images/portfolio-app.png" alt="App Design" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 14px; background: linear-gradient(to top, rgba(10,25,47,0.9), transparent);">
+                            <span style="color: white; font-weight: 700; font-size: 0.75rem; font-family: 'Outfit', sans-serif; letter-spacing: 1px;">APP DESIGN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sarah Jenkins Headshot -->
+                <div class="mouse-parallax hero-float-3" data-speed="-6" style="position: absolute; bottom: 2%; right: 30%; z-index: 6; transition: transform 0.1s ease-out;">
+                    <div style="width: 160px; height: 210px; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,123,255,0.3); border: 3px solid rgba(255,255,255,0.9); position: relative;">
+                        <img src="images/headshot.png" alt="Creative Director" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 14px; background: linear-gradient(to top, rgba(10,25,47,0.9), transparent); text-align: center;">
+                            <span style="color: white; font-weight: 700; font-size: 0.75rem; font-family: 'Outfit', sans-serif; letter-spacing: 1px;">CREATIVE LEAD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branding Card -->
+                <div class="mouse-parallax hero-float-4" data-speed="3" style="position: absolute; bottom: 8%; right: 2%; z-index: 4; transition: transform 0.1s ease-out;">
+                    <div style="width: 180px; height: 140px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 3px solid rgba(255,255,255,0.9); position: relative;">
+                        <img src="images/portfolio-branding.jpg" alt="Branding" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 14px; background: linear-gradient(to top, rgba(10,25,47,0.9), transparent);">
+                            <span style="color: white; font-weight: 700; font-size: 0.75rem; font-family: 'Outfit', sans-serif; letter-spacing: 1px;">BRANDING</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Stats Badge -->
+                <div class="mouse-parallax hero-float-5" data-speed="-4" style="position: absolute; top: 30%; right: 35%; z-index: 7; transition: transform 0.1s ease-out;">
+                    <div style="width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, #007BFF, #00C6FF); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(0,123,255,0.4); border: 3px solid rgba(255,255,255,0.3);">
+                        <span style="color: white; font-weight: 900; font-size: 1.8rem; font-family: 'Outfit', sans-serif; line-height: 1;">150+</span>
+                        <span style="color: rgba(255,255,255,0.8); font-weight: 600; font-size: 0.65rem; font-family: 'Outfit', sans-serif; letter-spacing: 1px; text-transform: uppercase;">Projects</span>
+                    </div>
+                </div>
+
+                <!-- Floating UI/UX Glass Card -->
+                <div class="mouse-parallax hero-float-6" data-speed="7" style="position: absolute; top: 12%; left: 15%; z-index: 2; transition: transform 0.1s ease-out;">
+                    <div style="background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); border: 1px solid white; padding: 18px 22px; border-radius: 18px; box-shadow: 0 15px 30px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 45px; height: 45px; background: #00C6FF; border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,198,255,0.3);">
+                            <i class="ph-bold ph-star" style="font-size: 1.3rem; color: white;"></i>
+                        </div>
+                        <div>
+                            <span style="color: #0A192F; font-weight: 800; font-size: 0.85rem; font-family: 'Outfit', sans-serif; display: block;">5.0 Rating</span>
+                            <span style="color: #64748b; font-weight: 500; font-size: 0.7rem; font-family: 'Inter', sans-serif;">98% Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Scrolling Services Marquee Banner -->
+    <div style="background: linear-gradient(135deg, #0A192F, #112240); padding: 20px 0; overflow: hidden; position: relative;">
+        <div style="display: flex; gap: 60px; animation: services-marquee 25s linear infinite; width: max-content; align-items: center;">
+            <span style="color: white; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ WEB DESIGN</span>
+            <span style="color: #00C6FF; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ UI/UX DESIGN</span>
+            <span style="color: white; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ BRAND IDENTITY</span>
+            <span style="color: #007BFF; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ E-COMMERCE</span>
+            <span style="color: white; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ DIGITAL MARKETING</span>
+            <span style="color: #00C6FF; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ SEO OPTIMIZATION</span>
+            <span style="color: white; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ MOBILE APPS</span>
+            <span style="color: #007BFF; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ GROWTH STRATEGY</span>
+            <!-- Duplicate for seamless loop -->
+            <span style="color: white; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ WEB DESIGN</span>
+            <span style="color: #00C6FF; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ UI/UX DESIGN</span>
+            <span style="color: white; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ BRAND IDENTITY</span>
+            <span style="color: #007BFF; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ E-COMMERCE</span>
+            <span style="color: white; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ DIGITAL MARKETING</span>
+            <span style="color: #00C6FF; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ SEO OPTIMIZATION</span>
+            <span style="color: white; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ MOBILE APPS</span>
+            <span style="color: #007BFF; font-size: 1.1rem; font-weight: 700; font-family: 'Outfit', sans-serif; letter-spacing: 3px; white-space: nowrap; text-transform: uppercase;">✦ GROWTH STRATEGY</span>
+        </div>
+        <style>
+            @keyframes services-marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+        </style>
+    </div>
+
+    <!-- 3D Flipping Photo Cards Services Section -->
+    <section class="services relative overflow-hidden" id="services" style="background-color: #f8fafc; padding: 120px 0;">
+        <div class="container mx-auto px-6 relative z-10 max-w-[1400px]">
+            <div class="text-center mb-24 scroll-reveal">
+                <h4 class="text-blue-600 font-bold tracking-widest uppercase mb-4 text-sm">Our Expertise</h4>
+                <h2 class="text-slate-900 text-5xl md:text-6xl font-extrabold font-['Outfit'] mb-6 leading-tight">Comprehensive Digital Solutions</h2>
+                <p class="text-slate-500 text-xl max-w-2xl mx-auto leading-relaxed">We deliver high-end, scalable, and visually stunning digital products that accelerate your business growth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" style="perspective: 1500px;">
+                <!-- Service 1: Web Design -->
+                <a href="/web-design" class="flip-card scroll-reveal stagger-1 h-[450px] block" style="text-decoration: none;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('images/service-webdesign.jpg');">
+                            <div class="overlay"></div>
+                            <div class="front-content">
+                                <i class="ph-bold ph-desktop text-6xl text-blue-400 mb-4 drop-shadow-lg"></i>
+                                <h3 class="text-3xl font-bold text-white font-['Outfit']">Web Design</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-[#0A192F] to-[#007BFF]">
+                            <i class="ph-bold ph-desktop text-4xl text-white/50 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-white mb-4 font-['Outfit']">Web Design</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Transforming ideas into high-performing digital realities. This service focuses on creating visually stunning, responsive, and clean-coded websites tailored to business goals. By balancing modern aesthetics with optimized functionality, we ensure your site looks flawless on any device while providing a solid technical foundation.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Service 2: UI/UX Design -->
+                <a href="/ui-ux-design" class="flip-card scroll-reveal stagger-2 h-[450px] block" style="text-decoration: none;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('images/service-uiux.jpg');">
+                            <div class="overlay"></div>
+                            <div class="front-content">
+                                <i class="ph-bold ph-bezier-curve text-6xl text-blue-400 mb-4 drop-shadow-lg"></i>
+                                <h3 class="text-3xl font-bold text-white font-['Outfit']">UI/UX Design</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-[#0A192F] to-[#007BFF]">
+                            <i class="ph-bold ph-bezier-curve text-4xl text-white/50 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-white mb-4 font-['Outfit']">UI/UX Design</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Crafting intuitive experiences that users love. Great design goes beyond how a product looks; it’s about how it feels and functions. Our UI/UX service delves deep into user research, wireframing, and interactive prototyping to build digital interfaces that are seamless, beautiful, and effortless to navigate.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Service 3: Brand Identity -->
+                <a href="/brand-identity" class="flip-card scroll-reveal stagger-3 h-[450px] block" style="text-decoration: none;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('images/service-branding.jpg');">
+                            <div class="overlay"></div>
+                            <div class="front-content">
+                                <i class="ph-bold ph-pen-nib text-6xl text-blue-400 mb-4 drop-shadow-lg"></i>
+                                <h3 class="text-3xl font-bold text-white font-['Outfit']">Brand Identity</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-[#0A192F] to-[#007BFF]">
+                            <i class="ph-bold ph-pen-nib text-4xl text-white/50 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-white mb-4 font-['Outfit']">Brand Identity</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Building powerful visual legacies that stand out. Your brand is your story, and we give it a voice. This service shapes how the world perceives your business by crafting a cohesive visual universe—including striking logos, color palettes, typography, and comprehensive brand guidelines.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Service 4: E-commerce -->
+                <a href="/e-commerce" class="flip-card scroll-reveal stagger-1 h-[450px] block" style="text-decoration: none;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('images/service-ecommerce.jpg');">
+                            <div class="overlay"></div>
+                            <div class="front-content">
+                                <i class="ph-bold ph-shopping-cart text-6xl text-blue-400 mb-4 drop-shadow-lg"></i>
+                                <h3 class="text-3xl font-bold text-white font-['Outfit']">E-commerce</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-[#0A192F] to-[#007BFF]">
+                            <i class="ph-bold ph-shopping-cart text-4xl text-white/50 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-white mb-4 font-['Outfit']">E-commerce</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Creating seamless, high-converting digital storefronts. Turn casual browsers into loyal customers with an optimized online shopping experience. From smooth product discovery and secure checkout systems to robust backend management, this service builds scalable e-commerce platforms.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Service 5: Digital Marketing -->
+                <a href="/digital-marketing" class="flip-card scroll-reveal stagger-2 h-[450px] block" style="text-decoration: none;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('images/service-marketing.jpg');">
+                            <div class="overlay"></div>
+                            <div class="front-content">
+                                <i class="ph-bold ph-trend-up text-6xl text-blue-400 mb-4 drop-shadow-lg"></i>
+                                <h3 class="text-3xl font-bold text-white font-['Outfit']">Digital Marketing</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-[#0A192F] to-[#007BFF]">
+                            <i class="ph-bold ph-trend-up text-4xl text-white/50 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-white mb-4 font-['Outfit']">Digital Marketing</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Amplifying your reach and driving measurable growth. A great product deserves to be seen. Our data-driven digital marketing strategies utilize SEO optimization, targeted campaigns, and performance analytics to connect your brand with the right audience and turn traffic into success.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Service 6: Mobile Apps -->
+                <a href="/mobile-apps" class="flip-card scroll-reveal stagger-3 h-[450px] block" style="text-decoration: none;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('images/service-mobileapp.jpg');">
+                            <div class="overlay"></div>
+                            <div class="front-content">
+                                <i class="ph-bold ph-device-mobile text-6xl text-blue-400 mb-4 drop-shadow-lg"></i>
+                                <h3 class="text-3xl font-bold text-white font-['Outfit']">Mobile Apps</h3>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-[#0A192F] to-[#007BFF]">
+                            <i class="ph-bold ph-device-mobile text-4xl text-white/50 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-white mb-4 font-['Outfit']">Mobile Apps</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Putting your brand directly into the hands of your audience. In a mobile-first world, a dedicated application offers an unparalleled way to engage users. We design and develop sleek, powerful, and native-feeling mobile applications optimized for both iOS and Android.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Styling & Scroll Logic -->
+    <style>
+        .flip-card {
+            background-color: transparent;
+            perspective: 1500px;
+            cursor: pointer;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            border-radius: 28px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg) scale(1.05); /* Flips and lifts toward user */
+            box-shadow: 0 30px 60px rgba(0, 123, 255, 0.4);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+
+        .flip-card-front {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .flip-card-front .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,25,47,0.95), rgba(10,25,47,0.2));
+            z-index: 1;
+            transition: opacity 0.4s ease;
+        }
+        
+        .flip-card:hover .flip-card-front .overlay {
+            opacity: 0.4;
+        }
+
+        .flip-card-front .front-content {
+            position: relative;
+            z-index: 2;
+            transform: translateZ(60px); /* 3D depth effect */
+            transition: transform 0.4s ease;
+        }
+
+        .flip-card-back {
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px;
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .scroll-reveal { opacity: 0; transform: translateY(60px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        .stagger-1 { transition-delay: 0.1s; } .stagger-2 { transition-delay: 0.25s; } .stagger-3 { transition-delay: 0.4s; }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- Why Choose Us -->
+    <section class="why-us section-padding" id="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-text slide-up">
+                    <h4 class="section-subtitle">Why 360 Elite Design</h4>
+                    <h2 class="section-title">We Deliver Excellence at Every Angle</h2>
+                    <p>We don't just build websites; we build digital ecosystems. Our holistic approach ensures every aspect of your online presence works together seamlessly.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <div>
+                                <h4>360° Approach</h4>
+                                <p>From concept to deployment and marketing.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <div>
+                                <h4>Creative Excellence</h4>
+                                <p>Award-winning designs that captivate users.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <div>
+                                <h4>Fast Delivery</h4>
+                                <p>Agile processes for rapid time-to-market.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <div>
+                                <h4>Client-Centric</h4>
+                                <p>Your goals dictate our strategies and execution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-image slide-up">
+                    <div class="glass-card abstract-shape">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="content-overlay">
+                            <h3>100% Satisfaction</h3>
+                            <p>Guaranteed on every project.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="process section-padding bg-light" id="process">
+        <div class="container">
+            <div class="section-header text-center slide-up">
+                <h4 class="section-subtitle">How We Work</h4>
+                <h2 class="section-title">Our Proven Process</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step slide-up stagger-1">
+                    <div class="step-number">01</div>
+                    <h3>Discovery</h3>
+                    <p>Understanding your business, goals, and target audience to define scope.</p>
+                </div>
+                <div class="process-step slide-up stagger-2">
+                    <div class="step-number">02</div>
+                    <h3>Strategy</h3>
+                    <p>Creating wireframes, user journeys, and a comprehensive project roadmap.</p>
+                </div>
+                <div class="process-step slide-up stagger-3">
+                    <div class="step-number">03</div>
+                    <h3>Design</h3>
+                    <p>Crafting high-fidelity UI designs and interactive prototypes for approval.</p>
+                </div>
+                <div class="process-step slide-up stagger-4">
+                    <div class="step-number">04</div>
+                    <h3>Development</h3>
+                    <p>Writing clean, scalable code and building robust functional systems.</p>
+                </div>
+                <div class="process-step slide-up stagger-5">
+                    <div class="step-number">05</div>
+                    <h3>Growth</h3>
+                    <p>Launch, SEO optimization, continuous monitoring, and scaling strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stunning Featured Work Section -->
+    <section class="portfolio section-padding" id="portfolio" style="background-color: #F8FAFC;">
+        <div class="container max-w-[1400px] mx-auto px-5">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 slide-up">
+                <div>
+                    <h4 class="text-primary font-bold tracking-widest uppercase mb-2 text-sm">Featured Work</h4>
+                    <h2 class="text-dark text-4xl md:text-5xl font-extrabold font-['Outfit']">Our Recent Projects</h2>
+                </div>
+                <a href="#" class="mt-6 md:mt-0 px-8 py-4 bg-white text-dark font-bold rounded-full border-2 border-gray-200 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm hover:shadow-xl inline-flex items-center gap-2 group" style="text-decoration: none;">
+                    View All Projects <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <!-- Project 1 -->
+                <div class="tilt-card slide-up stagger-1 group relative rounded-3xl overflow-hidden shadow-2xl cursor-pointer" style="transform-style: preserve-3d; height: 500px;">
+                    <img src="images/portfolio-web.png" alt="Web Design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end" style="transform: translateZ(50px);">
+                        <span class="inline-block px-4 py-1.5 bg-primary/20 backdrop-blur-md text-white rounded-full text-xs font-bold tracking-wider mb-4 w-max border border-white/10">WEB DEVELOPMENT</span>
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-3">Apex Digital Redesign</h3>
+                        <p class="text-gray-300 text-sm line-clamp-2 max-w-sm">A complete digital transformation featuring a high-performance web architecture and modern aesthetic.</p>
+                        <div class="mt-6 w-12 h-12 rounded-full bg-white text-dark flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="tilt-card slide-up stagger-2 group relative rounded-3xl overflow-hidden shadow-2xl cursor-pointer" style="transform-style: preserve-3d; height: 500px;">
+                    <img src="images/portfolio-app.png" alt="App Design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end" style="transform: translateZ(50px);">
+                        <span class="inline-block px-4 py-1.5 bg-secondary/20 backdrop-blur-md text-white rounded-full text-xs font-bold tracking-wider mb-4 w-max border border-white/10">UI/UX & APP DESIGN</span>
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-3">Elite Solutions App</h3>
+                        <p class="text-gray-300 text-sm line-clamp-2 max-w-sm">Intuitive, user-centered mobile interface designed for seamless cross-platform experiences.</p>
+                        <div class="mt-6 w-12 h-12 rounded-full bg-white text-dark flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 3 -->
+                 <div class="tilt-card slide-up stagger-3 group relative rounded-3xl overflow-hidden shadow-2xl cursor-pointer" style="transform-style: preserve-3d; height: 500px;">
+                    <img src="images/portfolio-branding.jpg" alt="Branding" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end" style="transform: translateZ(50px);">
+                        <span class="inline-block px-4 py-1.5 bg-purple-500/20 backdrop-blur-md text-white rounded-full text-xs font-bold tracking-wider mb-4 w-max border border-white/10">BRAND IDENTITY</span>
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-3">Nexus Finance Identity</h3>
+                        <p class="text-gray-300 text-sm line-clamp-2 max-w-sm">Memorable corporate identity and cohesive brand guidelines that stand out in the fintech sector.</p>
+                        <div class="mt-6 w-12 h-12 rounded-full bg-white text-dark flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Stats -->
+    <section class="stats section-padding" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item slide-up">
+                    <h2 class="counter" data-target="150">0</h2>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item slide-up delay-1">
+                    <h2 class="counter" data-target="98">0</h2><span>%</span>
+                    <p>Client Retention</p>
+                </div>
+                <div class="stat-item slide-up delay-2">
+                    <h2 class="counter" data-target="45">0</h2>
+                    <p>Industry Awards</p>
+                </div>
+                <div class="stat-item slide-up delay-3">
+                    <h2 class="counter" data-target="10">0</h2><span>+</span>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Horizontal Showcase (Auto-Sliding) -->
+    <section class="showcase section-padding relative overflow-hidden" style="background: linear-gradient(135deg, #0A192F 0%, #112240 100%); padding-top: 100px; padding-bottom: 100px;">
+        <!-- Glowing background orbs -->
+        <div class="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-[128px] opacity-30 animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full mix-blend-screen filter blur-[128px] opacity-30 animate-pulse" style="animation-delay: 2s;"></div>
+        
+        <div class="container relative z-10 max-w-[1400px] mx-auto px-5 mb-16">
+            <div class="text-center slide-up">
+                <h4 class="text-secondary font-bold tracking-widest uppercase mb-3 text-sm">Visual Excellence</h4>
+                <h2 class="text-white text-4xl md:text-6xl font-extrabold font-['Outfit']">A Closer Look</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Explore our interactive design gallery. We focus on every pixel to deliver perfection.</p>
+            </div>
+        </div>
+        
+        <!-- Infinite Marquee Track -->
+        <div class="relative w-full overflow-hidden pb-10 group flex">
+            <!-- Track that animates continuously from right to left -->
+            <div class="flex gap-8 animate-marquee group-hover:[animation-play-state:paused] w-max">
+                
+                <!-- Original 3 Cards -->
+                <div class="w-[85vw] md:w-[600px] h-[500px] rounded-3xl overflow-hidden relative shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10 shrink-0">
+                    <img src="images/portfolio-web.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Mockup 1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/50 to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-10 w-full pointer-events-none">
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-2">Immersive Web Experiences</h3>
+                        <p class="text-gray-300">Crafting stunning digital storefronts.</p>
+                    </div>
+                </div>
+
+                <div class="w-[85vw] md:w-[600px] h-[500px] rounded-3xl overflow-hidden relative shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10 shrink-0">
+                    <img src="images/portfolio-app.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Mockup 2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/50 to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-10 w-full pointer-events-none">
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-2">Native Mobile Applications</h3>
+                        <p class="text-gray-300">Performance-driven apps for iOS & Android.</p>
+                    </div>
+                </div>
+
+                <div class="w-[85vw] md:w-[600px] h-[500px] rounded-3xl overflow-hidden relative shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10 shrink-0">
+                    <img src="images/portfolio-webdesign.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Mockup 3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/50 to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-10 w-full pointer-events-none">
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-2">E-Commerce Ecosystems</h3>
+                        <p class="text-gray-300">Scalable shops optimized for conversions.</p>
+                    </div>
+                </div>
+
+                <!-- Duplicated 3 Cards for seamless infinite loop -->
+                <div class="w-[85vw] md:w-[600px] h-[500px] rounded-3xl overflow-hidden relative shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10 shrink-0">
+                    <img src="images/portfolio-web.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Mockup 1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/50 to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-10 w-full pointer-events-none">
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-2">Immersive Web Experiences</h3>
+                        <p class="text-gray-300">Crafting stunning digital storefronts.</p>
+                    </div>
+                </div>
+
+                <div class="w-[85vw] md:w-[600px] h-[500px] rounded-3xl overflow-hidden relative shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10 shrink-0">
+                    <img src="images/portfolio-app.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Mockup 2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/50 to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-10 w-full pointer-events-none">
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-2">Native Mobile Applications</h3>
+                        <p class="text-gray-300">Performance-driven apps for iOS & Android.</p>
+                    </div>
+                </div>
+
+                <div class="w-[85vw] md:w-[600px] h-[500px] rounded-3xl overflow-hidden relative shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10 shrink-0">
+                    <img src="images/portfolio-webdesign.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" alt="Mockup 3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/50 to-transparent opacity-90 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-10 w-full pointer-events-none">
+                        <h3 class="text-white text-3xl font-bold font-['Outfit'] mb-2">E-Commerce Ecosystems</h3>
+                        <p class="text-gray-300">Scalable shops optimized for conversions.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Keyframes for infinite marquee -->
+        <style>
+            @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-50% - 1rem)); } 
+            }
+            .animate-marquee {
+                animation: marquee 20s linear infinite;
+            }
+        </style>
+    </section>
+
+    <!-- About Us -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img slide-up">
+                    <img src="images/about-team.png" alt="360 Elite Design Team">
+                </div>
+                <div class="about-text slide-up delay-1">
+                    <h4 class="section-subtitle">About Us</h4>
+                    <h2 class="section-title">A passionate team of digital creators.</h2>
+                    <p>At 360 Elite Design, we believe in the power of design to transform businesses. Our mission is to bridge the gap between aesthetics and functionality, delivering products that not only look beautiful but also drive measurable results.</p>
+                    <p>Founded on the principles of innovation and client success, we have grown into a full-service agency equipped to handle complex digital challenges.</p>
+                    <a href="#contact" class="btn btn-primary mt-4">Join Our Journey</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-padding bg-light" id="testimonials">
+        <div class="container">
+            <div class="section-header text-center slide-up">
+                <h4 class="section-subtitle">Client Reviews</h4>
+                <h2 class="section-title">What They Say About Us</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card slide-up stagger-1">
+                    <div class="quote-icon"><i class="ph-fill ph-quotes"></i></div>
+                    <p>"360 Elite Design completely overhauled our digital presence. Their attention to detail in UX and the seamless e-commerce integration helped us scale our online sales by over 150% in the first quarter."</p>
+                    <div class="author">
+                        <img src="images/headshot.png" alt="Sarah Jenkins">
+                        <div>
+                            <h4>Sarah Jenkins</h4>
+                            <span>CMO, TechFlow Solutions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card slide-up stagger-2">
+                    <div class="quote-icon"><i class="ph-fill ph-quotes"></i></div>
+                    <p>"The branding and web design team at 360 Elite is phenomenal. They understood our vision perfectly and delivered a stunning, high-performance website that truly represents our premium positioning."</p>
+                    <div class="author">
+                        <div class="avatar-placeholder" style="background: #007BFF; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold;">MJ</div>
+                        <div>
+                            <h4>Michael Johnson</h4>
+                            <span>Founder, Urban Wear</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card slide-up stagger-3">
+                    <div class="quote-icon"><i class="ph-fill ph-quotes"></i></div>
+                    <p>"Working with 360 Elite Design was a game-changer. They built a custom mobile app for our business that our customers love. Professional, fast, communicative, and exceptionally talented."</p>
+                    <div class="author">
+                        <div class="avatar-placeholder" style="background: #00C6FF; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold;">EP</div>
+                        <div>
+                            <h4>Elena Petrova</h4>
+                            <span>CEO, Harmony Health</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media section-padding bg-dark" id="social" style="padding: 100px 0;">
+        <div class="container max-w-[1400px] mx-auto px-5">
+            <div class="section-header text-center slide-up mb-12">
+                <h4 class="section-subtitle" style="color: #00C6FF; font-weight: bold; tracking: 2px; text-transform: uppercase;">Stay Updated</h4>
+                <h2 class="section-title text-white text-4xl md:text-5xl font-extrabold font-['Outfit'] mt-2">Latest from our Socials</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Instagram/TikTok Style Card 1 -->
+                <div class="bg-[#112240] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] slide-up stagger-1 border border-white/5 transition-transform hover:-translate-y-2">
+                    <div class="h-56 relative overflow-hidden group">
+                        <img src="images/portfolio-web.png" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="Social Post">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#112240] to-transparent opacity-60"></div>
+                        <div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md p-2.5 rounded-full border border-white/10"><i class="ph-fill ph-instagram-logo text-white text-xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 text-sm mb-5 leading-relaxed">Just launched the new e-commerce experience for Urban Wear! 🚀 Custom UI/UX that converts. <span class="text-blue-400">#WebDesign #UIUX #AgencyLife</span></p>
+                        <a href="#" class="text-primary font-bold text-sm inline-flex items-center gap-2 hover:text-white transition-colors">View on Instagram <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-[#112240] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] slide-up stagger-2 border border-white/5 transition-transform hover:-translate-y-2">
+                    <div class="h-56 relative overflow-hidden group">
+                        <img src="images/portfolio-app.png" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="Social Post">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#112240] to-transparent opacity-60"></div>
+                        <div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md p-2.5 rounded-full border border-white/10"><i class="ph-fill ph-tiktok-logo text-white text-xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 text-sm mb-5 leading-relaxed">Behind the scenes of our latest mobile app design sprint. Watch our team turn wireframes into high-fidelity magic ✨ <span class="text-blue-400">#AppDesign</span></p>
+                        <a href="#" class="text-primary font-bold text-sm inline-flex items-center gap-2 hover:text-white transition-colors">Watch on TikTok <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-[#112240] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] slide-up stagger-3 border border-white/5 transition-transform hover:-translate-y-2">
+                    <div class="h-56 relative overflow-hidden group">
+                        <img src="images/portfolio-branding.jpg" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="Social Post">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#112240] to-transparent opacity-60"></div>
+                        <div class="absolute top-4 right-4 bg-blue-600/40 backdrop-blur-md p-2.5 rounded-full border border-white/10"><i class="ph-fill ph-linkedin-logo text-white text-xl"></i></div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 text-sm mb-5 leading-relaxed">Thrilled to announce that 360 Elite Design has been recognized for our innovative branding work with Nexus Finance! 🏆</p>
+                        <a href="#" class="text-primary font-bold text-sm inline-flex items-center gap-2 hover:text-white transition-colors">Read on LinkedIn <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="contact-wrapper glass-panel slide-up">
+                <div class="contact-info">
+                    <h2 class="text-white mb-4">Let's build something amazing together.</h2>
+                    <p class="text-light mb-5">Ready to elevate your digital presence? Fill out the form and our team will get back to you within 24 hours.</p>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <i class="ph-fill ph-envelope-simple text-white"></i>
+                            <div>
+                                <h5 class="text-white">Email Us</h5>
+                                <p class="text-light">work@360elitedesign.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="ph-fill ph-phone text-white"></i>
+                            <div>
+                                <h5 class="text-white">Call Us</h5>
+                                <p class="text-light">+12107418772</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="ph-fill ph-map-pin text-white"></i>
+                            <div>
+                                <h5 class="text-white">Visit Us</h5>
+                                <p class="text-light">SAN ANTONIO, TX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <!-- Toast Notification -->
+                    <div id="form-toast" style="display:none; padding: 16px 24px; border-radius: 12px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; margin-bottom: 20px; text-align: center; transition: all 0.3s ease;"></div>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Interested Service</label>
+                            <select id="service" name="service">
+                                <option>Web Design &amp; Development</option>
+                                <option>UI/UX Design</option>
+                                <option>Branding</option>
+                                <option>Digital Marketing</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+
+                    <script>
+                    document.getElementById('contactForm').addEventListener('submit', function(e) {
+                        e.preventDefault();
+
+                        const btn = document.getElementById('submitBtn');
+                        const toast = document.getElementById('form-toast');
+                        const name = document.getElementById('name').value.trim();
+                        const email = document.getElementById('email').value.trim();
+                        const service = document.getElementById('service').value;
+                        const message = document.getElementById('message').value.trim();
+
+                        if (!name || !email || !message) {
+                            toast.style.display = 'block';
+                            toast.style.background = '#fee2e2';
+                            toast.style.color = '#dc2626';
+                            toast.textContent = 'Please fill in all required fields.';
+                            return;
+                        }
+
+                        btn.disabled = true;
+                        btn.textContent = 'Sending...';
+
+                        // Send data to PHP backend
+                        fetch('contact.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ name, email, service, message })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            toast.style.display = 'block';
+                            if (data.status === 'success') {
+                                toast.style.background = '#dcfce7';
+                                toast.style.color = '#16a34a';
+                                toast.textContent = '✅ Message sent! We\'ll get back to you within 24 hours.';
+                                document.getElementById('contactForm').reset();
+                            } else {
+                                toast.style.background = '#fee2e2';
+                                toast.style.color = '#dc2626';
+                                toast.textContent = '❌ ' + (data.message || 'Failed to send. Please email us directly.');
+                            }
+                            btn.disabled = false;
+                            btn.textContent = 'Send Message';
+                            setTimeout(() => { toast.style.display = 'none'; }, 6000);
+                        })
+                        .catch(error => {
+                            toast.style.display = 'block';
+                            toast.style.background = '#fee2e2';
+                            toast.style.color = '#dc2626';
+                            toast.textContent = '❌ Failed to send. Please email us directly at work@360elitedesign.com';
+                            btn.disabled = false;
+                            btn.textContent = 'Send Message';
+                            console.error('Fetch error:', error);
+                        });
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div style="margin-bottom: 20px;">
+                        <img src="finallogo.png" alt="360 Elite Design" style="height: 120px; width: auto; display: block;">
+                    </div>
+                    <p>Turning Ideas Into Exceptional Digital Experiences. Design | Develop | Grow.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="ph-fill ph-twitter-logo"></i></a>
+                        <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
+                        <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#"><i class="ph-fill ph-dribbble-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Web Design</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">Branding</a></li>
+                        <li><a href="#services">E-commerce</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#portfolio">Our Work</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 360 Elite Design. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Reactive Cursor -->
+    <div id="custom-cursor" style="position: fixed; top: 0; left: 0; width: 40px; height: 40px; border: 2px solid rgba(0, 123, 255, 0.5); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background-color 0.3s; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 6px; height: 6px; background-color: #007BFF; border-radius: 50%;"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // --- Premium Mouse Reactive Parallax, Cursor & 3D Tilt ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const cursor = document.getElementById('custom-cursor');
+            const parallaxElements = document.querySelectorAll('.mouse-parallax');
+            const tiltCards = document.querySelectorAll('.tilt-card');
+
+            if(window.matchMedia("(pointer: fine)").matches) {
+                if(cursor) document.body.style.cursor = 'none';
+                
+                document.addEventListener('mousemove', (e) => {
+                    // 1. Custom Cursor
+                    if(cursor) {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+                    }
+
+                    // 2. Parallax effect
+                    const x = (window.innerWidth - e.pageX * 2) / 100;
+                    const y = (window.innerHeight - e.pageY * 2) / 100;
+
+                    parallaxElements.forEach(el => {
+                        const speed = el.getAttribute('data-speed');
+                        el.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                    });
+                });
+
+                // 3. Cursor Hover states
+                const interactables = document.querySelectorAll('a, button, .btn, .tilt-card');
+                interactables.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        if(cursor) {
+                            cursor.style.width = '60px';
+                            cursor.style.height = '60px';
+                            cursor.style.backgroundColor = 'rgba(0, 123, 255, 0.1)';
+                            cursor.style.borderColor = 'rgba(0, 123, 255, 0.8)';
+                        }
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        if(cursor) {
+                            cursor.style.width = '40px';
+                            cursor.style.height = '40px';
+                            cursor.style.backgroundColor = 'transparent';
+                            cursor.style.borderColor = 'rgba(0, 123, 255, 0.5)';
+                        }
+                    });
+                });
+
+                // 4. 3D Tilt Effect
+                tiltCards.forEach(card => {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left; 
+                        const y = e.clientY - rect.top;  
+                        
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        
+                        const rotateX = ((y - centerY) / centerY) * -12;
+                        const rotateY = ((x - centerX) / centerX) * 12;
+                        
+                        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                        card.style.transition = 'transform 0.1s ease-out';
+                    });
+                    
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                        card.style.transition = 'transform 0.5s ease-out';
+                    });
+                });
+            } else {
+                if(cursor) cursor.style.display = 'none'; 
+            }
+        });
+    </script>
+
+    <!-- Hero Scroll Explode Effect -->
+    <script>
+        (function() {
+            const hero = document.getElementById('home');
+            if (!hero) return;
+            
+            const heroContent = hero.querySelector('.container');
+            const heroBg = hero;
+            
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                const heroH = hero.offsetHeight;
+                
+                if (scrollY <= heroH) {
+                    const progress = scrollY / heroH;
+                    const ease = Math.pow(progress, 1.3);
+                    
+                    // Scale background slightly
+                    heroBg.style.backgroundSize = (100 + ease * 30) + '%';
+                    
+                    // Fade and move content
+                    if (heroContent) {
+                        heroContent.style.opacity = Math.max(0, 1 - progress * 1.8);
+                        heroContent.style.transform = 'translateY(' + (ease * -80) + 'px) scale(' + (1 - ease * 0.1) + ')';
+                    }
+                    
+                    // Explode the parallax cards outward
+                    const cards = hero.querySelectorAll('.mouse-parallax');
+                    cards.forEach((card, i) => {
+                        const directions = [
+                            { x: 200, y: -150, rot: 15 },
+                            { x: -250, y: -100, rot: -20 },
+                            { x: 150, y: 200, rot: 25 }
+                        ];
+                        const dir = directions[i % 3];
+                        const tx = dir.x * ease;
+                        const ty = dir.y * ease;
+                        const rot = dir.rot * ease;
+                        const scale = 1 + ease * 0.5;
+                        const opacity = Math.max(0, 1 - progress * 2);
+                        
+                        card.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) rotate(' + rot + 'deg) scale(' + scale + ')';
+                        card.style.opacity = opacity;
+                    });
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

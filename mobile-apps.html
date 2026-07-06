@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development | 360 Elite Design</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A192F;
+            color: #E2E8F0;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/service-mobileapp.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10,25,47,0.85), rgba(10,25,47,0.95));
+            z-index: -1;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        .accordion-content p {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0A192F]/80 backdrop-blur-md border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
+        <a href="/" class="flex items-center">
+            <img src="finallogo.png" alt="360 Elite Design" class="h-16 md:h-20 object-contain">
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="/" class="text-white hover:text-[#00C6FF] font-medium transition-colors font-['Outfit']">Home</a>
+            <a href="/#services" class="text-white hover:text-[#00C6FF] font-medium transition-colors font-['Outfit']">Services</a>
+            <a href="/#portfolio" class="text-white hover:text-[#00C6FF] font-medium transition-colors font-['Outfit']">Portfolio</a>
+            <a href="/#about" class="text-white hover:text-[#00C6FF] font-medium transition-colors font-['Outfit']">About</a>
+            <a href="/#contact" class="text-white hover:text-[#00C6FF] font-medium transition-colors font-['Outfit']">Contact</a>
+        </div>
+        <a href="/#contact" class="bg-gradient-to-r from-[#007BFF] to-[#00C6FF] text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all font-['Outfit']">Get Started</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[70vh] flex items-center pt-32 pb-20 px-6 md:px-12 text-center md:text-left overflow-hidden">
+        <div class="hero-bg"></div>
+        <div class="overlay"></div>
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <div class="max-w-3xl">
+                <span class="text-[#00C6FF] font-bold tracking-widest uppercase text-sm font-['Outfit'] mb-4 block">Application Division</span>
+                <h1 class="text-white text-5xl md:text-7xl font-extrabold font-['Outfit'] leading-tight mb-6">Mobile App Development</h1>
+                <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-8">
+                    Designing and developing native iOS and Android applications. We deliver custom systems optimized for performance, scalability, and user engagement.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="/#contact" class="bg-gradient-to-r from-[#007BFF] to-[#00C6FF] text-white px-8 py-4 rounded-full font-bold hover:shadow-lg hover:shadow-blue-500/25 transition-all text-center">Start a Project</a>
+                    <a href="#details" class="border border-white/20 hover:border-white/50 text-white px-8 py-4 rounded-full font-semibold transition-all text-center">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 2: Copy-Rich Split Showcase -->
+    <section id="details" class="py-24 px-6 md:px-12 bg-[#0C1A30]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Text Block -->
+                <div>
+                    <span class="text-[#00C6FF] font-bold uppercase text-xs tracking-wider mb-2 block">Putting Your Brand In Their Hands</span>
+                    <h2 class="text-white text-4xl md:text-5xl font-bold font-['Outfit'] leading-tight mb-6">
+                        Custom Mobile Apps Optimized For All Screens
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        In a mobile-first world, a dedicated application offers an unparalleled way to engage users and retain customers. We build sleek, native, and cross-platform applications customized for your specific operational goals.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed mb-8">
+                        Whether you require a complex enterprise tool, a high-converting digital storefront, or a consumer-facing application, our developers implement clean codebase architectures to ensure fast loading and complete stability.
+                    </p>
+                    <a href="/#contact" class="inline-block bg-gradient-to-r from-[#007BFF] to-[#00C6FF] text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all font-['Outfit']">
+                        LET'S GET STARTED
+                    </a>
+                </div>
+                <!-- Image / Mockup Block -->
+                <div class="relative flex justify-center">
+                    <div class="absolute inset-0 bg-blue-500/10 rounded-[32px] blur-3xl -z-10"></div>
+                    <div class="overflow-hidden rounded-[24px] border border-white/10 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                        <img src="images/portfolio-app.png" alt="Mobile App Portfolio" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Interactive Accordion & Solutions -->
+    <section class="py-24 px-6 md:px-12 bg-[#0A192F]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="text-[#00C6FF] font-bold uppercase text-xs tracking-wider mb-2 block font-['Outfit']">Mobile Solutions</span>
+                <h2 class="text-white text-4xl md:text-5xl font-bold font-['Outfit']">Premium App Development</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Showcase Image -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="absolute inset-0 bg-cyan-500/10 rounded-[32px] blur-3xl -z-10"></div>
+                    <div class="overflow-hidden rounded-[24px] border border-white/10 shadow-2xl">
+                        <img src="images/service-mobileapp.jpg" alt="Mobile Application Showcase" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <!-- Accordion Block -->
+                <div class="lg:col-span-7 space-y-4">
+                    
+                    <!-- Accordion Item 1 -->
+                    <div class="accordion-item border border-white/5 bg-[#0C1A30]/60 rounded-2xl p-6 transition-all">
+                        <button onclick="toggleAccordion(this)" class="accordion-header w-full flex justify-between items-center text-left focus:outline-none">
+                            <span class="text-xl font-bold text-white font-['Outfit']">iOS & Android Custom Development</span>
+                            <i class="ph-bold ph-caret-down text-[#00C6FF] accordion-icon transition-transform duration-300 text-xl"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="text-slate-300 leading-relaxed">
+                                Designing and engineering native applications using Swift and Kotlin, or cross-platform codebases with React Native and Flutter.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 2 -->
+                    <div class="accordion-item border border-white/5 bg-[#0C1A30]/60 rounded-2xl p-6 transition-all">
+                        <button onclick="toggleAccordion(this)" class="accordion-header w-full flex justify-between items-center text-left focus:outline-none">
+                            <span class="text-xl font-bold text-white font-['Outfit']">Responsive Mobile UI/UX Design</span>
+                            <i class="ph-bold ph-caret-down text-[#00C6FF] accordion-icon transition-transform duration-300 text-xl"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="text-slate-300 leading-relaxed">
+                                Refining layout grids and user interfaces specifically for touch navigation, interactive micro-actions, and thumb zones.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 3 -->
+                    <div class="accordion-item border border-white/5 bg-[#0C1A30]/60 rounded-2xl p-6 transition-all">
+                        <button onclick="toggleAccordion(this)" class="accordion-header w-full flex justify-between items-center text-left focus:outline-none">
+                            <span class="text-xl font-bold text-white font-['Outfit']">API & Backend Database Integration</span>
+                            <i class="ph-bold ph-caret-down text-[#00C6FF] accordion-icon transition-transform duration-300 text-xl"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="text-slate-300 leading-relaxed">
+                                Connecting mobile layouts securely to relational databases, authentication suites, storage nodes, and external APIs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 4 -->
+                    <div class="accordion-item border border-white/5 bg-[#0C1A30]/60 rounded-2xl p-6 transition-all">
+                        <button onclick="toggleAccordion(this)" class="accordion-header w-full flex justify-between items-center text-left focus:outline-none">
+                            <span class="text-xl font-bold text-white font-['Outfit']">App Store Optimization (ASO)</span>
+                            <i class="ph-bold ph-caret-down text-[#00C6FF] accordion-icon transition-transform duration-300 text-xl"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="text-slate-300 leading-relaxed">
+                                Optimizing descriptions, metadata tags, screenshots, and visual branding to maximize visibility on the App Store and Google Play.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 5 -->
+                    <div class="accordion-item border border-white/5 bg-[#0C1A30]/60 rounded-2xl p-6 transition-all">
+                        <button onclick="toggleAccordion(this)" class="accordion-header w-full flex justify-between items-center text-left focus:outline-none">
+                            <span class="text-xl font-bold text-white font-['Outfit']">Post-Launch Support & Maintenance</span>
+                            <i class="ph-bold ph-caret-down text-[#00C6FF] accordion-icon transition-transform duration-300 text-xl"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="text-slate-300 leading-relaxed">
+                                Deploying routine software patches, OS version compatibility updates, performance tuning, and new feature integrations.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <footer class="py-12 border-t border-white/5 bg-[#081426] text-center">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <img src="finallogo.png" alt="360 Elite Design" class="h-20 mx-auto mb-6 object-contain">
+            <p class="text-slate-400 mb-6 font-['Outfit']">© 2026 360 Elite Design. All rights reserved.</p>
+            <div class="flex justify-center gap-6 text-2xl text-slate-400 mb-8">
+                <a href="/#services" class="hover:text-[#00C6FF] transition-colors"><i class="ph ph-desktop"></i></a>
+                <a href="/#portfolio" class="hover:text-[#00C6FF] transition-colors"><i class="ph ph-folder"></i></a>
+                <a href="/#contact" class="hover:text-[#00C6FF] transition-colors"><i class="ph ph-envelope"></i></a>
+            </div>
+            <a href="/" class="text-slate-500 hover:text-white transition-colors font-medium">← Back to Home</a>
+        </div>
+    </footer>
+
+    <!-- Accordion Script -->
+    <script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all accordion items
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('active');
+                el.querySelector('.accordion-content').style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                const content = item.querySelector('.accordion-content');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
